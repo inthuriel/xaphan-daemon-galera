@@ -16,25 +16,25 @@ Performed checks contains:
 <code> ./xaphandeamon.py stop </code>
 <h2>Daemon defaults</h2>
 <code>
-            'mysql':
-                {
-                    'host': '127.0.0.1',
-                    'port': '3307',
-                    'user': 'checker',
-                    'pass': ''
-                },
-            'daemon':
-                {
-                    'pid': '/var/run/xaphan-daemon.pid',
-                    'critical_log': '/var/log/xaphan-daemon-critical.log',
-                    'def_tty': '/dev/tty0',
-                    'host': '0.0.0.0',
-                    'port': '9988'
-                },
-            'logger':
-                {
-                    'location': '/var/log/xaphan-daemon.log',
-                    'name': 'xaphan-log',
-                    'rotation_time': '30'
-                }
+            'mysql': <br />
+                { <br />
+                    'host': '127.0.0.1', <br />
+                    'port': '3307', <br />
+                    'user': 'checker', <br />
+                    'pass': '' <br />
+                }, <br />
+            'daemon': <br />
+                { <br />
+                    'pid': '/var/run/xaphan-daemon.pid', <br />
+                    'critical_log': '/var/log/xaphan-daemon-critical.log', <br />
+                    'def_tty': '/dev/tty0', <br />
+                    'host': '0.0.0.0', <br />
+                    'port': '9988' <br />
+                }, <br />
+            'logger': <br />
+                { <br />
+                    'location': '/var/log/xaphan-daemon.log', <br />
+                    'name': 'xaphan-log', <br />
+                    'rotation_time': '30' <br />
+                } <br />
 </code>
