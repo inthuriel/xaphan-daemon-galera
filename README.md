@@ -29,7 +29,7 @@ stop daemon:
 'daemon':
 		{
          'pid': '/var/run/xaphan-daemon.pid',
-         'critical_log': '/var/log/xaphan-daemon-critical.log', <br />
+         'critical_log': '/var/log/xaphan-daemon-critical.log',
          'def_tty': '/dev/tty0',
          'host': '0.0.0.0',
          'port': '9988'
