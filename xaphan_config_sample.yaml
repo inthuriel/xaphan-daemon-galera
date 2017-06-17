@@ -3,12 +3,14 @@ mysql:
   port:
   user:
   pass:
+  charset:
 daemon:
-  pid:
-  critical_log:
-  def_tty:
-  host:
-  port:
+  telnet:
+    ip:
+    port:
+  api:
+    ip:
+    port:
 logger:
   location:
   name:
