@@ -1,6 +1,6 @@
-##Xaphan daemon. 
+## Xaphan daemon. 
 
-###A Python Galera daemon with telnet and api interface
+### A Python Galera daemon with telnet and api interface
 This is a simple daemon checking galera node state. <br>
 Performed checks contains:
 * check if UUID of cluster and node is the same
