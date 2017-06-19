@@ -87,13 +87,17 @@ def wsgi_handler(env, start_response):
         status = '400 Bad Request'
         response_body = json.dumps({'error': 'Bad Request'})
     else:
-        node_status = xaphan_daemon(CONFIG)
-        response_body = api_json_answer(**node_status)
+        if env.get('PATH_INFO', '') == '/':
+            node_status = xaphan_daemon(CONFIG)
+            response_body = api_json_answer(**node_status)
 
-        if node_status.get('status') == 'down':
-            status = '503 Service Unavailable'
+            if node_status.get('status') == 'down':
+                status = '503 Service Unavailable'
+            else:
+                status = '200 OK'
         else:
-            status = '200 OK'
+            status = '404 Not found'
+            response_body = json.dumps({'error': 'Route not found'})
 
     response_headers = [
         ('Content-Type', 'application/json'),
@@ -107,7 +111,7 @@ def wsgi_handler(env, start_response):
 
 def daemon_establish():
     """
-    Base class to establish daemon with parser init params
+    Base class to establish daemon with parsed init params
     :return: working daemon
     """
 
@@ -134,6 +138,9 @@ def daemon_establish():
             server = WSGIServer((connection_data.get('ip'), int(connection_data.get('port'))),
                                 wsgi_handler)
             server.serve_forever()
+        else:
+            print('{} is wrong server type'.format(args.server_type))
+            exit(1)
     else:
         print('{} is wrong server type'.format(args.server_type))
         exit(1)
